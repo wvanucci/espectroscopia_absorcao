@@ -855,14 +855,14 @@ with tab6:
     # ABAS INTERNAS PARA CADA ESPECTRO
     spec_tab1, spec_tab2, spec_tab3 = st.tabs(["Espectro 1: Anã Branca", "Espectro 2: Estrela Tipo Solar", "Espectro 3: Super Gigante"])
     with spec_tab1:
-        st.subheader("Espectro de uma Estrela Anã Branca (2MASS J00035692-0503328)")
+        st.subheader("Espectro de um Sistema Binário (2MASS J00035692-0503328)")
 
         # Usando colunas para mostrar as duas imagens lado a lado
         col1, col2 = st.columns(2)
 
         with col1:
             # ATUALIZE O CAMINHO PARA A IMAGEM SEM LINHAS
-            st.image("assets/image_35ada1.png", caption="Espectro real de uma anã branca.")
+            st.image("assets/image_35ada1.png", caption="Espectro real de uma binária.")
             
         with col2:
             # ATUALIZE O CAMINHO PARA A IMAGEM COM LINHAS
@@ -871,28 +871,36 @@ with tab6:
         # Container com a análise profissional que você pediu
         with st.container(border=True):
             st.markdown("""
-            #### Análise Profissional: O Fim da Vida de uma Estrela
-            
-            Este é um espectro real de uma **Anã Branca**, o núcleo denso e quente que resta após uma estrela de massa semelhante à do Sol esgotar seu combustível nuclear e ejetar suas camadas externas. Vamos analisar suas propriedades:
+                    #### Análise Profissional: A História de Duas Estrelas
+                    
+                    Este espectro fascinante do sistema **2MASS J00035692-0503328** conta a história não de uma, mas de duas estrelas. A luz que vemos é a soma da contribuição de uma Anã Branca quente (Tipo DA) e uma Anã Vermelha fria (Tipo M). Vamos primeiro focar na estrela principal.
 
-            * **Temperatura Efetiva:** **~17.100 K** (extremamente quente, quase três vezes a temperatura da superfície do Sol, que é ~5.800 K).
-            * **Massa:** **0.66 M☉** (cerca de 66% da massa do nosso Sol).
-            * **Gravidade Superficial (log g):** **8.07** (o Sol tem um log(g) de ~4.44). Esse valor é **dezenas de milhares de vezes maior** que a gravidade do Sol e indica que a estrela é incrivelmente densa: imagine 66% da massa do Sol espremida em um objeto do tamanho da Terra!
+                    ---
+                    
+                    #### A Estrela Principal: A Anã Branca
+                    
+                    A luz na parte azul do espectro é dominada pela **Anã Branca**, o núcleo denso que resta após uma estrela como o Sol morrer. Suas propriedades são extremas:
 
-            **Desafio Interativo:** Com uma temperatura de 17.100 K, que cor você esperaria que essa estrela tivesse? Volte para o simulador da **Etapa 1**, ajuste o pico de emissão para corresponder a essa temperatura e compare a cor da curva de corpo negro. A cor branco-azulada que você encontrará lá faz sentido para uma estrela tão quente?
+                    * **Temperatura Efetiva:** **~17.100 K** (extremamente quente, quase três vezes a temperatura da superfície do Sol, que é ~5.800 K).
+                    * **Massa:** **~0.66 M☉** (cerca de 66% da massa do nosso Sol).
+                    * **Gravidade Superficial (log g):** **8.07** (o Sol tem um log(g) de ~4.44). Esse valor, dezenas de milhares de vezes maior que o do Sol, indica que a estrela é incrivelmente densa: **imagine 66% da massa do Sol espremida em um objeto do tamanho da Terra!**
 
-            #### A Importância das "Impressões Digitais"
-            
-            As duas imagens acima mostram o mesmo espectro. Na segunda, destacamos as "impressões digitais" do átomo de **Hidrogênio** (as linhas da série de Balmer: Hα a 6563 Å, Hβ a 4861 Å, etc.). Reconhecer esses padrões é o primeiro passo para qualquer análise. Uma vez que identificamos com certeza que essas são linhas de hidrogênio, podemos usá-las como **pontos de referência** para estudar outras propriedades da estrela, como a imensa pressão em sua atmosfera (note como as linhas são extremamente largas!).
+                    **Desafio Interativo:** Com uma temperatura de 17.100 K, que cor você esperaria que essa estrela issolada tivesse? Volte para o simulador da **Etapa 1**, ajuste os parâmetros para essa temperatura e confirme se a cor branco-azulada faz sentido para uma estrela tão quente.
 
-            #### Reflexão sobre o Desconhecido
-            
-            Observe o espectro na região **além de 7000 Å**. As linhas de referência mais proeminentes do hidrogênio no visível não estão mais lá, mas o gráfico continua cheio de flutuações. O que você acha que está acontecendo ali? Seriam linhas de outros elementos que não marcamos, ou poderiam ser apenas ruído do detector? É exatamente esse tipo de questão que um astrofísico busca responder.
-            """)
+                    ---
+
+                    #### A Pista da Companheira escondida no Espectro
+
+                    As linhas de absorção de Hidrogênio que vemos (Hα, Hβ, etc.) pertencem à Anã Branca. Note como elas são **extremamente largas** – isso é um efeito direto da imensa pressão em sua atmosfera (o alto `log(g)`).
+
+                    É aqui que o mistério que você notou é resolvido: a luz da Anã Branca deveria diminuir cada vez mais na parte vermelha do espectro. Em vez disso, o fluxo **começa a subir** após 7000 Å. Essa luz "extra" é a assinatura da **Anã Vermelha**, a companheira mais fria, cuja luz só se torna dominante nesta região. A "contradição" no gráfico é a prova de que há duas estrelas ali!
+                    """)
+
 
         # CAIXA DE TEXTO PARA O ALUNO (ATUALIZADA)
+# A caixa de texto para o aluno e a referência podem continuar as mesmas.
         st.text_area(
-            "Analisando as linhas de Hidrogênio (Hα, Hβ, etc.), o que a **largura** delas sugere sobre esta estrela, especialmente quando você se lembra do efeito do log(g) na Etapa 4? E sobre a região após 7000 Å, as flutuações se parecem mais com ruído ou com novas linhas de absorção?",
+            "Com base na explicação, descreva com suas palavras por que o fluxo deste espectro começa a subir após 7000 Å. O que a presença da Anã Vermelha nos diz sobre como os espectros que observamos são, na verdade, uma soma de todas as fontes de luz capturadas pelo telescópio?",
             height=150,
             key="analise_spec1"
         )
@@ -1001,7 +1009,7 @@ with tab6:
     itens_relatorio_e6 = [
         {
             'tipo': 'qa',
-            'pergunta': 'Análise do Espectro 1 (Anã Branca)',
+            'pergunta': 'Análise do Espectro 1 (Estrela binária)',
             'resposta': resposta_spec1
         },
         {
