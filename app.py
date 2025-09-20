@@ -124,12 +124,12 @@ Use as abas abaixo para progredir passo a passo, desde a radiação de corpo neg
 
 # --- ESTRUTURA DE ABAS ---
 tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs([
-    "Etapa 1: Radiação de Corpo Negro",
+    "Etapa 1: Radiação Ideal",
     "Etapa 2: Atlas Espectral",
-    "Etapa 3: Espectro com Absorção (Unificado)",
-    "Etapa 4: Atividade de Identificação",
+    "Etapa 3: Espectro com Absorção",
+    "Etapa 4: Investigação",
     "Etapa 5: Linha de referência",
-    "Etapa 6: O espectro 'real': O trabalho do astrofísico(a)",
+    "Etapa 6: O espectro real: O trabalho do astrofísico(a)",
     "Tutorial e Créditos"
 ])
 # 3. Função para converter o DataFrame para CSV
