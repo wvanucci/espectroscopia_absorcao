@@ -905,7 +905,7 @@ with tab6:
             key="analise_spec1"
         )
         st.caption("""
-        Fonte dos Dados: Os parâmetros da estrela (temperatura, massa, etc.) foram consultados no [Montreal White Dwarf Database (MWDD)](https://www.montrealwhitedwarfdatabase.org/). A imagem do espectro foi gerada a partir dos dados públicos do [Sloan Digital Sky Survey (SDSS)](https://www.sdss.org/).
+        Fonte dos Dados: Os parâmetros da estrela (temperatura, massa, etc.) foram consultados no [Montreal White Dwarf Database (MWDD)](https://www.montrealwhitedwarfdatabase.org/). 
         """)
     with spec_tab2:
         st.subheader("Espectro de uma Estrela Análoga Solar")
