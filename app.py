@@ -118,7 +118,7 @@ st.title("🔭 Espectroscopia com Luz Visível")
 
 st.markdown("""
 Bem-vindo ao Explorador de Espectros Estelares!
-Esta ferramenta interativa foi projetada para ajudar a entender como os astrônomos usam a luz das estrelas para determinar suas propriedades, como temperatura e composição química.
+Esta ferramenta interativa foi projetada para ajudar a entender como os astrofísicos usam a luz das estrelas para determinar suas propriedades, como temperatura e composição química.
 Use as abas abaixo para progredir passo a passo, desde a radiação de corpo negro até a identificação de elementos químicos pelo espectro de luz visível.
 """)
 
@@ -137,7 +137,7 @@ tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs([
 def convert_df_to_csv(df):
   return df.to_csv(index=False).encode('utf-8')
 
-# --- CÓDIGO DA ETAPA 1 (TRADUÇÃO LITERAL DA CÉLULA 1) ---
+# --- CÓDIGO DA ETAPA 1  ---
 with tab1:
     st.header("Radiação ideal de estrelas")
 
@@ -188,7 +188,7 @@ with tab1:
   # --- SEÇÃO DE ATIVIDADE (VERSÃO CORRIGIDA) ---
     st.divider()
     st.header("Atividade Prática: Usando a Lei de Wien")
-    st.markdown("Use o simulador acima para encontrar o comprimento de onda de pico ($\lambda_{max}$) de diferentes classes de estrelas e anote na tabela abaixo para calcular suas temperaturas.")
+    st.markdown("Use o simulador acima para encontrar o comprimento de onda máximo ($\lambda_{max}$) de diferentes classes de estrelas e anote na tabela abaixo para calcular suas temperaturas.")
     st.info("""
     **Instruções:**
     1. Use o simulador acima para encontrar o $\lambda_{max}$ para cada classe espectral.
@@ -295,8 +295,8 @@ with tab1:
     )
 
     mostrar_tutorial_csv()
-# --- CÓDIGO DA ETAPA 2 (TRADUÇÃO LITERAL DA CÉLULA 2) ---
-# --- CONTEÚDO DA ETAPA 2 ---
+# --- CÓDIGO DA ETAPA 2 
+
 with tab2:
     st.header("Atlas Espectral de alguns átomos e um composto")
     st.markdown("Este é um atlas de referência que mostra as 'impressões digitais' (linhas de absorção) dos principais elementos encontrados em estrelas.")
@@ -408,7 +408,7 @@ with tab2:
     mostrar_tutorial_csv()
 
 
-# --- CÓDIGO DA ETAPA 3 (TRADUÇÃO LITERAL DA CÉLULA 3) ---
+# --- CÓDIGO DA ETAPA 3 
 with tab3:
     st.header("Modelo simples de espectro de absorção")
     with st.expander("Clique aqui para entender por que os espectros das estrelas têm 'vales'"):
@@ -505,7 +505,7 @@ with tab3:
     st.pyplot(fig)
 
 
-# --- CÓDIGO DA ETAPA 4 (TRADUÇÃO LITERAL DA CÉLULA 4) ---
+# --- CÓDIGO DA ETAPA 4 
 with tab4:
     st.header("Atividade de identificação de átomos e composto em espectro de absorção")
 
@@ -637,11 +637,11 @@ with tab4:
 # NOVA SEÇÃO SOBRE CECILIA PAYNE (baseada no artigo)
         st.subheader("A revolução de uma cientista: Descoberta, Gênero e Poder")
         st.markdown("""
-        #### A Crença Antiga: Um Universo com a nossa Cara
-        Até a década de 1920, a visão predominante, defendida por gigantes da área como o astrofísico **Henry Norris Russell**, era de que as estrelas e a Terra tinham composições químicas semelhantes. A lógica era simples e baseada em observação direta: como as linhas espectrais de metais como Ferro (Fe) e Cálcio (Ca) eram as mais fortes no espectro do Sol, esses deveriam ser os elementos mais abundantes. Acreditava-se que a intensidade de uma linha era um indicativo direto da quantidade do elemento.
+        #### A Crença Antiga: Um universo com a nossa Cara
+        Até a década de 1920, a visão predominante, defendida por influentes da área como o astrofísico **Henry Norris Russell**, era de que as estrelas e a Terra tinham composições químicas semelhantes. A lógica era simples e baseada em observação direta e qualitativa: como as linhas espectrais de metais como Ferro (Fe) e Cálcio (Ca) eram as mais fortes no espectro do Sol, esses deveriam ser os elementos mais abundantes. Acreditava-se que a intensidade de uma linha era um indicativo direto da quantidade do elemento.
 
         #### A Tese que mudou tudo
-        Em sua tese de doutorado em 1925, **Cecilia Payne** fez algo radical.Usando a recém-desenvolvida teoria quântica, ela construiu um método quantitativo para explicar as linhas espectrais. Sua análise matemática rigorosa a levou a uma conclusão que contrariava todo o conhecimento vigente:
+        Em sua tese de doutorado em 1925, **Cecilia Payne** fez algo radical. Usando a recém-desenvolvida teoria quântica, ela construiu um método quantitativo para explicar as linhas espectrais. Sua análise matemática rigorosa a levou a uma conclusão que contrariava todo o conhecimento vigente:
 
         * **Hidrogênio e Hélio não eram apenas presentes, mas sim os componentes esmagadoramente dominantes do universo**. Em suas contas, o hidrogênio era mais de um milhão de vezes mais abundante que o ferro na atmosfera solar.
         * A intensidade de uma linha espectral **não mede a abundância**, mas sim as **condições físicas** (principalmente a temperatura) da atmosfera da estrela, que determinam se um átomo está no estado correto de excitação para absorver energia.
@@ -659,18 +659,18 @@ with tab4:
 
         Quatro anos depois, usando uma metodologia diferente, o próprio Henry Norris Russell chegou à mesma conclusão que Payne. Seu artigo se tornou a referência na área, e por muito tempo ele foi creditado como o pioneiro da descoberta. Embora ele tenha citado o trabalho dela, não mencionou que ela havia chegado à resposta correta anos antes e fora dissuadida por ele.
 
-        Cecilia Payne continuou sua carreira em Harvard por mais de trinta anos, mas só foi oficialmente nomeada "professora" em 1956, tornando-se a primeira mulher a chefiar um departamento na universidade. Sua história é um lembrete poderoso de que a ciência não é uma busca puramente objetiva; ela é uma construção humana, influenciada por preconceitos, relações de poder e pela coragem daqueles que ousam desafiar o consenso.
+        Payne, em 1925, se tornou a :violet[**primeira pessoa**] a conseguir o título de doutora em astronomia na Universidade de Harvard. Cecilia Payne continuou sua carreira em Harvard por mais de trinta anos, mas só foi oficialmente nomeada professora em 1956, tornando-se a primeira mulher a chefiar um departamento na universidade. Sua história é um lembrete poderoso de que a ciência não é uma busca puramente objetiva; ela é uma construção humana, influenciada por preconceitos, relações de poder e pela coragem daqueles que ousam desafiar a opressão.
         """)
 
 
         st.markdown("---")
         st.caption("""
-    **Material de Apoio (Para Alunos e Professores):**
+    **Material de Apoio (para alunos e professores):**
 
     A história de como Cecilia Payne revolucionou nosso entendimento da composição do universo é fascinante e um marco na ciência. Para saber mais sobre seu trabalho e a física por trás da análise espectral, leia o artigo:
 
     * [O papel de Cecilia Payne na determinação da composição estelar](https://doi.org/10.1590/1806-9126-RBEF-2021-0028)
-    * [Raça, gênero e classe social nas ciências físicas: o silêncio dos homens](https://doi.org/10.47456/Cad.Astro.v5nEspecial.44894)
+    
     """)
         # --- PERGUNTA FINALIZADORA (NOVA SEÇÃO) ---
         st.divider()
@@ -680,7 +680,7 @@ with tab4:
 
         Com base no que você leu, escreva uma reflexão sobre como os desafios de gênero e a pressão de cientistas estabelecidos impactaram não apenas a carreira de Cecilia, mas também o próprio avanço do conhecimento científico. 
         
-        Reunám-se com os seus colegas e discuta os termos "caráter feminino" e "jamais seria uma astrônoma" no contexto do texto. O que esse tipo de atitude impacta na sociedade? Quais vozes/sujeitos estão em posição de poder, e em relação a quem? **
+        Reuna-se com os seus colegas e discuta os termos "caráter feminino" e "jamais seria uma astrônoma" no contexto do texto. O que esse tipo de atitude impacta na sociedade? Quais vozes/sujeitos estão em posição de poder, e em relação a quem? **
         """)
 
         reflexao_final = st.text_area("Escreva sua reflexão final aqui:", height=200, key="reflexao_final")
@@ -740,7 +740,7 @@ with tab4:
     )
     mostrar_tutorial_csv()
 
-# --- CÓDIGO DA ETAPA 5 (TRADUÇÃO LITERAL DA CÉLULA 5) ---
+# --- CÓDIGO DA ETAPA 5 
 with tab5:
     st.header("Linha de referencia de espectro no visível")
 
@@ -821,7 +821,7 @@ with tab6:
 
     # TEXTO INTRODUTÓRIO QUE VOCÊ PEDIU
     st.markdown("""
-    Bem-vindo(a) à fronteira da astrofísica moderna! Até agora, você trabalhou com um simulador idealizado, um ambiente controlado para aprender os conceitos fundamentais. Agora, vamos encarar o desafio que os astrofísicos enfrentam todos os dias: analisar dados reais.
+    Bem-vindo(a) à fronteira da astrofísica moderna! Até agora, você trabalhou com um simulador idealizado, um ambiente controlado para aprender os conceitos fundamentais. Agora, vamos encarar o desafio que os astrofísicos(as) enfrentam todos os dias: analisar dados reais.
 
     Grandes levantamentos de dados, como o **Sloan Digital Sky Survey (SDSS)** e bancos de dados especializados como o **Montreal White Dwarf Database (MWDD)**, coletaram milhões de espectros de estrelas, galáxias e quasares. Este trabalho monumental nos permite entender a evolução do universo, a composição de estrelas distantes e até mesmo os restos de planetas que orbitaram estrelas mortas.
 
@@ -881,11 +881,11 @@ with tab6:
                     
                     A luz na parte azul do espectro é dominada pela **Anã Branca**, o núcleo denso que resta após uma estrela como o Sol morrer. Suas propriedades são extremas:
 
-                    * **Temperatura Efetiva:** **~17.100 K** (extremamente quente, quase três vezes a temperatura da superfície do Sol, que é ~5.800 K).
-                    * **Massa:** **~0.66 M☉** (cerca de 66% da massa do nosso Sol).
-                    * **Gravidade Superficial (log g):** **8.07** (o Sol tem um log(g) de ~4.44). Esse valor, dezenas de milhares de vezes maior que o do Sol, indica que a estrela é incrivelmente densa: **imagine 66% da massa do Sol espremida em um objeto do tamanho da Terra!**
+                    * **Temperatura Efetiva:** **~17.000 K** (extremamente quente, quase três vezes a temperatura da superfície do Sol, que é ~5.800 K).
+                    * **Massa:** **~0,66 M☉** (cerca de 66% da massa do nosso Sol).
+                    * **Gravidade Superficial (log g):** **8,07** (o Sol tem um log(g) de ~4,44). Esse valor, dezenas de milhares de vezes maior que o do Sol, indica que a estrela é incrivelmente densa: **imagine 66% da massa do Sol espremida em um objeto do tamanho da Terra!**
 
-                    **Desafio Interativo:** Com uma temperatura de 17.100 K, que cor você esperaria que essa estrela issolada tivesse? Volte para o simulador da **Etapa 1**, ajuste os parâmetros para essa temperatura e confirme se a cor branco-azulada faz sentido para uma estrela tão quente.
+                    **Desafio Interativo:** Com uma temperatura de 17.100 K, que cor você esperaria que essa estrela isolada tivesse? Volte para o simulador da **Etapa 1**, ajuste os parâmetros para essa temperatura e confirme se a cor branco-azulada faz sentido para uma estrela tão quente.
 
                     ---
 
@@ -893,7 +893,7 @@ with tab6:
 
                     As linhas de absorção de Hidrogênio que vemos (Hα, Hβ, etc.) pertencem à Anã Branca. Note como elas são **extremamente largas** – isso é um efeito direto da imensa pressão em sua atmosfera (o alto `log(g)`).
 
-                    É aqui que o mistério que você notou é resolvido: a luz da Anã Branca deveria diminuir cada vez mais na parte vermelha do espectro. Em vez disso, o fluxo **começa a subir** após 7000 Å. Essa luz "extra" é a assinatura da **Anã Vermelha**, a companheira mais fria, cuja luz só se torna dominante nesta região. A "contradição" no gráfico é a prova de que há duas estrelas ali!
+                    É aqui que o mistério é resolvido: a luz da Anã Branca deveria diminuir cada vez mais na parte vermelha do espectro. Em vez disso, o fluxo **começa a subir** após 7000 Å. Essa luz "extra" é a assinatura da **Anã Vermelha**, a companheira mais fria, cuja luz só se torna dominante nesta região. A "contradição" no gráfico é a prova de que há duas estrelas ali!
                     """)
 
 
@@ -916,15 +916,15 @@ with tab6:
         # Container com a análise profissional
         with st.container(border=True):
             st.markdown("""
-            #### Análise Profissional: Encontrando uma Gêmea do Sol?
+            #### Análise Profissional: Encontrando uma gêmea do Sol
             
             Este espectro pertence a uma estrela do tipo G, a mesma classe do nosso Sol. À primeira vista, ela parece muito familiar: uma curva suave repleta de linhas de absorção finas, indicando a presença de vários elementos em sua atmosfera.
 
             Diferente dos espectros normalizados do simulador, este gráfico mostra o fluxo de energia real ($F_{\lambda}$) que recebemos da estrela em unidades físicas. Como ajuda, algumas das linhas de absorção mais importantes já foram identificadas para nós, incluindo as do **Cálcio (CaII)**, **Hidrogênio (Hβ, Hα)** e **Sódio (Na)**.
 
-            #### Um Desafio de Comparação
+            #### Um desafio de comparação
             
-            Nosso Sol tem uma temperatura de superfície de aproximadamente **5777 K** (usaremos esse valor padrão, que é muito próximo do que você usou), e o pico de sua emissão de luz ($\lambda_{max}$) ocorre em torno de **5020 Å (ou 502 nm)**, na cor verde-amarela.
+            Nosso Sol tem uma temperatura de superfície de aproximadamente **5777 K** (usaremos esse valor padrão, que é muito próximo do que você usou), e o pico de sua emissão de luz ($\lambda_{max}$) ocorre em torno de **5020 Å (ou 502 nm)**, na faixa visível (branco).
 
             Agora, observe atentamente o gráfico desta estrela. **Onde você diria que está o pico de emissão dela?** O ponto mais alto da curva parece estar em um comprimento de onda **mais curto** ou **mais longo** que os 5020 Å do Sol?
 
@@ -937,7 +937,7 @@ with tab6:
 
         # CAIXA DE TEXTO PARA O ALUNO (ATUALIZADA)
         st.text_area(
-            "Com base na sua análise visual do pico de emissão, você acha que esta estrela é mais quente ou mais fria que o Sol? Justifique sua resposta usando o que aprendeu na Etapa 1. Além disso, as linhas de CaII e Na estão proeminentes como esperado para uma estrela deste tipo?",
+            "Com base na sua análise visual do pico de emissão, você acha que esta estrela é mais quente ou mais fria que o Sol? Justifique sua resposta usando o que aprendeu na Etapa 1. Além disso, é possível identificar outras linhas de absorção ao analisar esse espectro?",
             height=150,
             key="analise_spec2"
         )
@@ -1045,7 +1045,7 @@ with tab7:
     Este tutorial ensina como usar a ferramenta "SQL Search" do Sloan Digital Sky Survey (SDSS) para encontrar tipos específicos de estrelas, como anãs brancas, gigantes, supergigantes e estrelas da sequência principal (como o Sol).
     """)
 
-    st.subheader("Parte 1: Acessando a Ferramenta de Pesquisa SQL")
+    st.subheader("Parte 1: Acessando a ferramenta de pesquisa SQL")
     st.markdown("""
     Primeiro, precisamos chegar à ferramenta correta no site.
     1. Acesse a página inicial do SDSS SkyServer: [https://skyserver.sdss.org/](https://skyserver.sdss.org/)
@@ -1055,7 +1055,7 @@ with tab7:
     Você verá uma página com uma grande caixa de texto. É aqui que inserimos nossos comandos.
     """)
 
-    st.subheader("Parte 2: Entendendo o Comando SQL Base")
+    st.subheader("Parte 2: Entendendo o comando SQL Base")
     st.markdown("""
     Todos os nossos comandos terão uma estrutura parecida. Vamos usar nosso comando de "gêmea solar" como o modelo base para entender cada parte:
     """)
@@ -1078,7 +1078,7 @@ WHERE
     - **`WHERE ...`**: Esta é a parte mais importante, onde definimos as regras do nosso filtro para encontrar exatamente o que queremos.
     """)
 
-    st.subheader("Parte 3: Como Modificar o Filtro")
+    st.subheader("Parte 3: Como modificar o Filtro")
     st.markdown("""
     Para encontrar diferentes tipos de estrelas, você só precisa modificar as linhas dentro da cláusula `WHERE`. Os dois parâmetros mais poderosos para isso são `subclass` e `LOGGADOP`.
     """)
@@ -1107,7 +1107,7 @@ WHERE
         - `p.LOGGADOP BETWEEN -0.5 AND 2.0`: Para supergigantes.
     """, icon="📏")
 
-    st.subheader("Parte 4: Comandos Prontos para Usar")
+    st.subheader("Parte 4: Comandos prontos para usar")
     st.markdown("Aqui estão os quatro comandos que desenvolvemos, prontos para copiar e colar.")
     
     with st.expander("Clique para ver os comandos SQL"):
@@ -1123,7 +1123,7 @@ WHERE
         st.markdown("**4. Anã Branca**")
         st.code("SELECT TOP 10 s.specobjid, s.subclass, p.LOGGADOP FROM specObj AS s JOIN SppParams AS p ON s.specobjid = p.SPECOBJID WHERE s.class = 'STAR' AND p.LOGGADOP > 7.0", language='sql')
 
-    st.subheader("Parte 5: O Processo Completo")
+    st.subheader("Parte 5: O processo completo")
     st.markdown("""
     1. Navegue até a ferramenta **SQL Search**.
     2. Escolha e copie um dos comandos acima.
@@ -1142,6 +1142,7 @@ WHERE
     - O papel de Cecilia Payne na determinação da composição estelar: [https://doi.org/10.1590/1806-9126-RBEF-2021-0028](https://doi.org/10.1590/1806-9126-RBEF-2021-0028)
     - Raça, gênero e classe social nas ciências físicas: o silêncio dos homens: [https://doi.org/10.47456/Cad.Astro.v5nEspecial.44894](https://doi.org/10.47456/Cad.Astro.v5nEspecial.44894)
     - DE SOUZA OLIVEIRA FILHO, Kepler; SARAIVA, Maria de Fátima Oliveira. **Astronomia e astrofísica**. Livraria da Física, Rio Grande do Sul, 2004.
+    - Os dados de linhas de absorção foram retirados de: NATIONAL INSTITUTE OF STANDARDS AND TECHNOLOGY (NIST). Atomic Spectra Database. Disponível em: https://www.nist.gov/pml/atomic-spectra-database. Acesso em: 15 set. 2025.
     """)
 
     st.divider()
