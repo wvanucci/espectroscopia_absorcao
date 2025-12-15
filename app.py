@@ -8,7 +8,7 @@ import io
 st.set_page_config(layout="wide", page_title="Explorador de Espectros Estelares")
 
 # --- 1. FUNÇÕES E DADOS COMUNS (DEFINIDOS UMA VEZ PARA TODO O APP) ---
-# Todas as funções e dicionários que você definiu no seu notebook.
+
 # --- NOVAS FUNÇÕES DE GRÁFICO COM CACHE ---
 
 @st.cache_data
@@ -363,7 +363,6 @@ with tab1:
         x_max_slider = st.slider("Escala horizontal $\lambda_{máx}$ (nm):", 500, 4000, 1500, 10, key="zoom_max_e1")
 
     # Lógica de plotagem da Etapa 1
-    # Lógica de plotagem da Etapa 1 (agora com cache)
     fig1 = gerar_grafico_etapa1(pico_slider, x_min_slider, x_max_slider)
     st.pyplot(fig1)
 
@@ -403,7 +402,7 @@ with tab1:
     )
     st.session_state.df_wien = df_editado_e1
 
-    # O resto do código do gabarito e download continua daqui para baixo, sem alterações...
+    #  código do gabarito e download 
     observacoes_feitas = (st.session_state.df_wien['λ_max (nm)'].dropna().astype(str).str.strip() != '').sum()
     st.divider()
     if observacoes_feitas >= 6:
@@ -438,7 +437,7 @@ with tab1:
     csv_para_download = convert_df_to_csv(st.session_state.df_wien)
     st.download_button(label="📥 Baixar tabela em CSV", data=csv_para_download, file_name='minhas_temperaturas_wien.csv', mime='text/csv')
 
-    # MUDANÇA: Adicionada a caixa de pergunta e resposta para a conclusão
+    # Adicionada a caixa de pergunta e resposta para a conclusão
     st.divider()
     st.subheader("Pergunta de Conclusão")
     st.markdown("""
@@ -446,7 +445,7 @@ with tab1:
     """)
     conclusao_aluno = st.text_area("Escreva sua conclusão aqui:", height=150)
 
-    # --- SEÇÃO DE DOWNLOAD REATORADA ---
+    # --- SEÇÃO DE DOWNLOAD  ---
     st.divider()
     st.header("Salvar seu Trabalho da Etapa 1")
 
@@ -488,7 +487,7 @@ with tab2:
 
     # --- TABELA INTERATIVA ---
     st.subheader("Atividade de Anotação")
-    # MUDANÇA: Texto atualizado com exemplo
+    # Texto com exemplo
     st.markdown("""
     Agora que você observou os espectros, anote na tabela abaixo os comprimentos de onda (em nm) que você identificou.
     **Preencha cada coluna 'Linha' com um único valor.**
@@ -520,7 +519,7 @@ with tab2:
         key="editor_etapa2"  # <-- Adiciona uma key única e estável
     )
 
-    # 3. SALVA as alterações de volta na memória (passo crucial)
+    # 3. SALVA as alterações de volta na memória (passo crucial - documentação streamlit)
     st.session_state.df_atlas_activity = df_editado_e2
 
     # Botão de download usando a função universal
@@ -544,8 +543,8 @@ with tab2:
         mime='text/csv'
     )
 
-    # O tutorial do CSV pode vir depois, se você o tiver nesta aba
-    # mostrar_tutorial_csv()
+    # O tutorial do CSV p
+    
 
     mostrar_tutorial_csv()
 
@@ -600,8 +599,8 @@ with tab3:
         x_min_e3 = st.slider("Escala horizontal $\lambda_{mín}$ (nm):", 50, 1000, 380, 10, key="zoom_min_e3")
         x_max_e3 = st.slider("Escala horizontal $\lambda_{máx}$ (nm):", 400, 2000, 750, 10, key="zoom_max_e3")
 
-    # Lógica de plotagem da Etapa 3
-    # Lógica de plotagem da Etapa 3 (agora com cache)
+    
+    # Lógica de plotagem da Etapa 3 (com cache)
     fig3 = gerar_grafico_etapa3(temp_e3, log_g_e3, x_min_e3, x_max_e3)
     st.pyplot(fig3)
 
@@ -619,7 +618,7 @@ with tab4:
         x_min_e4 = st.slider("Escala horizontal $\lambda_{mín}$ (nm):", 100, 1000, 380, 10, key="zoom_min_e4")
         x_max_e4 = st.slider("Escala horizontal $\lambda_{máx}$ (nm):", 400, 2000, 750, 10, key="zoom_max_e4")
 
-    # MUDANÇA 1: Adicionada a explicação sobre log(g)
+    # Adicionada a explicação sobre log(g)
     with st.expander("O que significa 'Gravidade (log g)'?"):
       st.markdown("""
     O termo **log(g)** refere-se à **gravidade na superfície** da estrela, que está diretamente relacionada à pressão em sua atmosfera.
@@ -678,18 +677,18 @@ with tab4:
     st.markdown("2. Olhando para todas as suas observações na tabela, qual elemento parece estar presente e visível na **maioria das classes espectrais** que você analisou?")
     resposta2 = st.text_area("Resposta 2:", height=100, key="r2_e4")
 
-    # MUDANÇA 3: Adicionada a nova pergunta sobre log(g)
+    # Adicionada a nova pergunta sobre log(g)
     st.markdown("3. Mantenha a temperatura fixa (ex: 6000 K) e mova o slider 'Gravidade (log g)'. O que acontece com a **largura** das linhas de absorção quando você aumenta ou diminui o valor de log(g)? Descreva por que a largura das linhas espectrais varia e quais são as diferenças entre as características de estrelas com alto e baixo log(g).")
     resposta3 = st.text_area("Resposta 3:", height=100, key="r3_e4")
 
-    # MUDANÇA 2: Lógica para mostrar o "spoiler" apenas após 6 observações
+    # Lógica para mostrar o "spoiler" apenas após 6 observações
     st.divider()
     # Conta quantas linhas foram preenchidas na coluna "Elementos Identificados"
     observacoes_feitas = (df_editado_e4['Elementos Identificados'].str.strip() != '').sum()
     reflexao_final = ""
     if observacoes_feitas >= 6:
 
-# NOVA SEÇÃO SOBRE CECILIA PAYNE (baseada no artigo)
+# SEÇÃO SOBRE CECILIA PAYNE (baseada no artigo)
         st.subheader("A revolução de uma cientista: Descoberta, Gênero e Poder")
         st.markdown("""
         #### A Crença Antiga: Um universo com a nossa Cara
@@ -815,7 +814,7 @@ with tab5:
             if st.checkbox(nome, key=f"check_e5_{nome}"):
                 marcadores_selecionados.append(nome)
 
-    # Lógica de plotagem da Etapa 5 (agora com cache)
+    # Lógica de plotagem da Etapa 5 (com cache)
     fig5 = gerar_grafico_etapa5(temp_e5, log_g_e5, x_min_e5, x_max_e5, marcadores_selecionados)
     st.pyplot(fig5)
 
@@ -823,7 +822,7 @@ with tab5:
 with tab6:
     st.header("🔭 Etapa 6: Análise de Espectros Reais")
 
-    # TEXTO INTRODUTÓRIO QUE VOCÊ PEDIU
+    # TEXTO INTRODUTÓRIO
     st.markdown("""
     Bem-vindo(a) à fronteira da astrofísica moderna! Até agora, você trabalhou com um simulador idealizado, um ambiente controlado para aprender os conceitos fundamentais. Agora, vamos encarar o desafio que os astrofísicos(as) enfrentam todos os dias: analisar dados reais.
 
@@ -872,7 +871,7 @@ with tab6:
             # ATUALIZE O CAMINHO PARA A IMAGEM COM LINHAS
             st.image("assets/image_35ad6a.png", caption="Mesmo espectro, com as linhas de absorção do Hidrogênio identificadas.")
 
-        # Container com a análise profissional que você pediu
+        # Container com a análise profissional
         with st.container(border=True):
             st.markdown("""
                     #### Análise Profissional: A História de Duas Estrelas
@@ -901,8 +900,8 @@ with tab6:
                     """)
 
 
-        # CAIXA DE TEXTO PARA O ALUNO (ATUALIZADA)
-# A caixa de texto para o aluno e a referência podem continuar as mesmas.
+        # CAIXA DE TEXTO PARA O ALUNO
+
         st.text_area(
             "Com base na explicação, descreva com suas palavras por que o fluxo deste espectro começa a subir após 7000 Å. O que a presença da Anã Vermelha nos diz sobre como os espectros que observamos são, na verdade, uma soma de todas as fontes de luz capturadas pelo telescópio?",
             height=150,
@@ -917,7 +916,7 @@ with tab6:
         col1, col2, col3 = st.columns([1,3,1])
         with col2:
 
-        # ATUALIZE O CAMINHO PARA A NOVA IMAGEM
+        # CAMINHO PARA IMAGEM
             st.image("assets/espec_sol.png", caption="Espectro de uma estrela do tipo G, semelhante ao nosso Sol.")
 
         # Container com a análise profissional
@@ -942,21 +941,21 @@ with tab6:
             Para uma comparação detalhada, astrofísicos usam "atlas" espectrais de altíssima resolução do Sol. Se tiver curiosidade, você pode explorar um espectro solar interativo e tentar encontrar as mesmas linhas de absorção no site do : [**BASS2000 Solar Survey**](https://bass2000.obspm.fr/solar_spect.php).
             """)
 
-        # CAIXA DE TEXTO PARA O ALUNO (ATUALIZADA)
+        # CAIXA DE TEXTO PARA O ALUNO
         st.text_area(
             "Com base na sua análise visual do pico de emissão, você acha que esta estrela é mais quente ou mais fria que o Sol? Justifique sua resposta usando o que aprendeu na Etapa 1. Além disso, é possível identificar outras linhas de absorção ao analisar esse espectro?",
             height=150,
             key="analise_spec2"
         )
         
-        # Adicione a fonte dos dados se desejar
+        # Fonte de dados
         st.caption("""
         Fonte dos Dados: Espectro obtido através dos dados públicos do Sloan Digital Sky Survey (SDSS).
         """)
     with spec_tab3:
         st.subheader("Espectro de uma Estrela Supergigante")
 
-        # ATUALIZE O CAMINHO PARA A IMAGEM DA SUPERGIGANTE
+        # Atualizar CAMINHO PARA A IMAGEM DA SUPERGIGANTE
         col1, col2, col3 = st.columns([1,3,1])
         with col2:
             st.image("assets/super_ging.png", caption="Espectro de uma estrela supergigante do tipo G/K, candidata selecionada do SDSS.")
@@ -992,14 +991,14 @@ with tab6:
             Apesar de ser mais "fria" que o Sol, não se engane. O tamanho colossal desta estrela faz com que ela seja dezenas de milhares de vezes **mais luminosa** no total. Ela está em um estágio avançado de sua vida, já tendo consumido o hidrogênio de seu núcleo e agora "queimando" elementos mais pesados.
             """)
 
-        # CAIXA DE TEXTO PARA O ALUNO (ATUALIZADA)
+        # CAIXA DE TEXTO PARA O ALUNO
         st.text_area(
             "Qual é a principal diferença que você nota nas linhas de absorção desta estrela em comparação com a Anã Branca (Aba 1)? O que essa característica nos diz sobre a gravidade e a densidade da atmosfera da supergigante? (Dica: lembre-se do slider `log(g)` da Etapa 4).",
             height=150,
             key="analise_spec3"
         )
         
-        # Adicione a fonte dos dados
+        #  fonte dos dados
         st.caption("""
         Fonte dos Dados: Espectro de uma candidata a supergigante, selecionado a partir dos dados públicos do Sloan Digital Sky Survey (SDSS).
         """)
@@ -1009,7 +1008,7 @@ with tab6:
     st.markdown("Clique no botão abaixo para baixar um relatório completo (.csv) com todas as suas análises dos espectros reais.")
 
     # 1. Coleta as respostas das caixas de texto
-    # O Streamlit guarda o conteúdo dos widgets na session_state usando a 'key' que definimos
+    # O Streamlit guarda o conteúdo dos widgets na session_state usando a 'key'
     resposta_spec1 = st.session_state.get('analise_spec1', '') # Usar .get para segurança
     resposta_spec2 = st.session_state.get('analise_spec2', '')
     resposta_spec3 = st.session_state.get('analise_spec3', '')
@@ -1033,7 +1032,7 @@ with tab6:
         }
     ]
 
-    # 3. Gere o relatório chamando a função universal
+    # 3. Gera o relatório chamando a função universal
     relatorio_csv_e6 = gerar_relatorio_universal(itens_relatorio_e6)
 
     # 4. Crie o botão de download
